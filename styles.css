@@ -1,0 +1,32 @@
+body {
+  background-color: #363738;
+}
+
+.container {
+  background-color: #363738;
+  padding: 40px;
+  border-radius: 5px;
+  margin-top: 100px;
+  border: 5px solid #28eea7;
+  color: #28eea7;
+}
+
+.btn-primary {
+    margin-top: 30px;
+  background-color: #28eea7;
+  border-color: #28eea7;
+}
+
+.btn-primary:hover {
+  background-color: #28eea585;
+  border-color: #28eea585;
+}
+
+p{
+    display: inline-block;
+}
+
+a {
+  color: #28eea7;
+  text-decoration: underline;
+}
