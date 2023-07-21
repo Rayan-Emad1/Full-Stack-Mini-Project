@@ -7,24 +7,28 @@ pages.signin = () => {
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
   let submit=document.getElementById('sub');
-  console.log('hello')
+  // console.log(email,password)
   submit.addEventListener("click", pages.send_data(email,password));
 }
 
 
 pages.send_data=(email,password)=>{
-  console.log('hello2')
+  // console.log(email,password + " send data")
+
   const credentials = {
-    email:email,
-    password: password,
+    "email":email,
+    "password": password
   }
+  const file = JSON.stringify(credentials)
+
+  
+  console.log(credentials)
+  console.log(file)
+
 
   fetch("http://localhost/FullStackMiniProject/signin.php", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(credentials)
+    body:file 
   })
     .then(response => response.json())
     .then(data => {
@@ -33,7 +37,7 @@ pages.send_data=(email,password)=>{
       console.log('hello3')
       pages.handleResponseStatus(status,name);
     })
-    .catch(error => console.log(error))
+    .catch(error => console.log('API ERROR ' + error))
 }
 
 pages.handleResponseStatus = (status,name) => {
